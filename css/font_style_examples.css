@@ -1,0 +1,44 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #F2EFF1;
+    color: #232339;
+    /*
+    F2EFF1
+    9F99AA
+    9A677D
+    967FB1
+    232339
+    */
+}
+
+header h1{
+    font-family: 'Loved by the King', cursive;
+}
+
+.size_length_example{
+    width: 10em;  /* M */
+    height: 10em;
+    background-color: blue;
+}
+
+nav ul{
+    list-style: none;
+    margin:0px;
+    padding: 0px;
+}
+
+nav li{
+    display: inline;
+}
+
+nav a{
+    
+    color: black; /* TODO Fix colors */
+    text-decoration: none;
+    border: 1px solid black;
+    padding: .5em;
+    text-align: center;
+
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Positioning Example</title>
+        <style>
+            section{
+                border: 1px solid black; 
+                color:white;               
+                display: inline-block;
+                width:200px;
+            }
+            main{
+                position: relative;
+            }
+
+            .Section1{
+                background-color: aqua;
+                top:10px;
+                left:10px;
+            }
+
+            .Section2{
+                position: relative;
+                background-color: blue;
+                top:-2px;
+                left:-2px;
+            }
+
+            .Section3{
+                position: fixed;
+                background-color: brown;
+                top:75%;
+                right:10%;
+                border-radius: 50%;
+            }
+
+            .Section4{
+                position: absolute;
+                background-color: chartreuse;
+                top:75%;
+                right:10%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section class="Section1">
+                <H1>Section 1</H1>
+            </section>
+            <section class="Section2">
+                <H1>Section 2</H1>
+            </section>
+            <section class="Section3">
+                <H1>Chat Now!</H1>
+            </section>
+            <section class="Section4">
+                <H1>Section 4</H1>
+            </section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus animi accusamus ipsum beatae, dolorem omnis in obcaecati placeat neque autem dicta. Odio eligendi ad molestiae a minus, tenetur aliquid perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aspernatur aperiam voluptate delectus maiores, laudantium nihil animi modi dignissimos labore voluptatem qui deleniti est vel. Architecto praesentium dignissimos nihil maiores? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in cumque illo quidem corporis debitis vel doloremque, impedit facilis perspiciatis ea vero consequuntur perferendis voluptate magni necessitatibus ipsum animi recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae sapiente ut alias optio voluptatem incidunt delectus ad mollitia. Neque delectus quae praesentium harum ipsam ipsa officia pariatur velit </p>
+        </main>
+    </body>
+</html>
