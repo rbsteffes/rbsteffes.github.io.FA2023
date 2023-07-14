@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /*label{
+                display: block;
+            }*/
+            input{
+                border:0px;
+                border-bottom:1px solid black;
+            }
+            ul{
+                list-style: none;
+                padding:0px;
+            }
+            form ul li{
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="formOne" action="#" method="get">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <ul>
+                    <li>
+                        <label for="firstName">First Name</label><input name="firstName" id="firstName" placeholder="Oh Awesome One">                        
+                    </li>
+                    <li>
+                        <label for="surname">Last Name</label><input name="surname" id="surname" placeholder="The Great">
+                    </li>
+                </ul>
+            </fieldset>
+            <ul>
+                <li>
+                    <label for="commentType">Type of correspondance</label>
+                    <select id="commentType" name="commentType">
+                        <optgroup label="Reasonable">
+                            <option value="Praise">Praise</option>
+                            <option value="Gushing">Gushing</option>
+                            <option value="Groveling">Peasant talk</option>
+                        </optgroup>
+                        <optgroup label="Unreasonable">
+                            <option value="Disagree">I disagree with you</option>
+                        </optgroup>
+                    </select>
+                </li>
+                <li>
+                    <input list="list_id" type="text" name="contentBoxType">
+                    <datalist id="list_id">
+                        <option value="Praise">Praise</option>
+                        <option value="Gushing">Gushing</option>
+                        <option value="Groveling">Peasant talk</option>
+                        <option value="Disagree">I disagree with you</option>
+                    </datalist>
+                <li>
+                    <label for="commentBox">Comment:</label><textarea id="commentBox" name="commentBox" row="3" cols="25" placeholder="Example Comment."></textarea>
+                </li>
+                <li><button type="submit">Submit</button></li>
+            </ul>
+        </form>
+    </body>
+</html>
