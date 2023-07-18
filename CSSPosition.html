@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This is a CSS Position practice exercise">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                line-height: inherit;
+                font-family: inherit;
+                box-sizing: border-box;
+            }
+
+            div{
+                height:33vh;
+                width:33vh;
+                border: solid 1px black;
+                float:left;
+            }
+            .header, .footer{
+                height:fit-content;
+            }
+            .footer{
+                position: fixed;
+                bottom:100vh;
+            }
+            main, header, footer{
+                clear:both;
+            }
+            /*
+            #one{
+                position: static;
+                top:50vh;
+            }
+            #two{
+                position: absolute;
+                left:25vh;
+                top:25vh;
+            }
+            #two h1{
+                position: absolute;
+                top:10%;
+                left:10%;
+            }*/
+            .card{
+                height: auto;
+                margin-top:30px;
+
+            }
+
+            .card img{
+                position: relative;
+                top:-20px;
+                left:40%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>Header</header>
+        <main>
+            <div id="one" class="card"><img src="images/pencil.svg"><h1>One</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci molestias magni, rerum fuga deleniti necessitatibus eaque explicabo iusto deserunt modi hic provident. Sit, possimus adipisci. Ducimus officiis ea eos aliquam.</p></div>
+            <div id="two"><h1>Two</h1></div>
+            <div id="three"><h1>Three</h1></div>
+        </main>
+        <footer>footer</footer>
+    </body>
+</html>
