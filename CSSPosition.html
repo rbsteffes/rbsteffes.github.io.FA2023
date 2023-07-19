@@ -14,11 +14,35 @@
                 box-sizing: border-box;
             }
 
+            main{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
             div{
+                
+                border: solid 1px black;
+                /*float:left;
                 height:33vh;
                 width:33vh;
-                border: solid 1px black;
-                float:left;
+                */
+            }
+
+            #one{
+                flex-basis: 15vw;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+            #two{
+                flex-basis: 25%;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+            #three{
+                flex-basis: 35vh;
+                flex-grow: 0;
+                flex-shrink: 0;
             }
             .header, .footer{
                 height:fit-content;
@@ -56,14 +80,42 @@
                 top:-20px;
                 left:40%;
             }
+            ul{
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding:.2em;
+                margin:1vh 0;
+                background-color: beige;
+            }
+            li{
+                margin:0 2vw;
+            }
+
 
         </style>
     </head>
     <body>
-        <header>Header</header>
+        <header>
+            <h1>Header</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/Class4_html.html">Class 4</a>
+                    </li>
+                    <li>
+                        <a href="/Exercise2.5.html">Exercise 2.5</a>
+                    </li>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         <main>
-            <div id="one" class="card"><img src="images/pencil.svg"><h1>One</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci molestias magni, rerum fuga deleniti necessitatibus eaque explicabo iusto deserunt modi hic provident. Sit, possimus adipisci. Ducimus officiis ea eos aliquam.</p></div>
-            <div id="two"><h1>Two</h1></div>
+            <div id="one"><img src="images/pencil.svg" width="32" height="32"><h1>One</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci molestias magni, rerum fuga deleniti necessitatibus eaque explicabo iusto deserunt modi hic provident. Sit, possimus adipisci. Ducimus officiis ea eos aliquam.</p></div>
+            <div id="two"><h1>Two</h1><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam distinctio, dolorum blanditiis voluptatem impedit quidem, deleniti vitae itaque aperiam animi nulla molestias? Perspiciatis asperiores nostrum voluptate optio quaerat ratione sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laborum officiis voluptas eaque blanditiis. Minus voluptatibus ipsum accusamus! Ipsum quia nostrum doloremque omnis, ducimus natus rerum ullam repudiandae perspiciatis illo Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, consequatur. Tempora accusamus dicta quam. Maxime accusamus libero perspiciatis adipisci cumque ducimus quibusdam beatae eligendi, ipsum sapiente quidem magnam voluptates sequi?</div>
             <div id="three"><h1>Three</h1></div>
         </main>
         <footer>footer</footer>
