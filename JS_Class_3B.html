@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Class 1: JavaScript Introduction">
+        <title>Class 2: JavaScript Variable Example</title>
+        <style>
+            label{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <form>
+            <label for="x">X:</label><input type="number" name="x" id="X">
+            <label for="y">Y:</label><input type="number" name="Y" id="Y">
+            <button type="button" onclick="add()">Add them</button>
+        </form>
+
+        <script>
+           
+            function add()
+            {
+                let x = parseInt(document.getElementById("X").value);
+                let y = parseInt(document.getElementById("Y").value);
+                alert( x + y);
+            }
+
+           
+           
+           
+        </script>
+        <noscript>
+            <h1>I am really offended you have JavaScript turned off</h1>
+        </noscript>
+
+    </body>
+</html>

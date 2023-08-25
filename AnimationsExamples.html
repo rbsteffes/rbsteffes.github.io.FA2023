@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+        a{
+            display:inline-block;
+            width: 10em;
+            padding: .5em;
+            border: 1px solid black;
+            border-radius: 10%;
+            background-color: blue;
+            color:white;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: white;
+            color: blue;
+            transition: color 10s 2s;
+        }
+
+       /* body{
+                background-size: 400% 400%;
+                background: linear-gradient(333deg, rgba(2,0,36,1) , rgba(9,121,24,1), rgba(0,14,255,0.36458333333333337));
+                animation: shimmer 15s ease infinite;
+                height: 100vh;
+            }
+
+        @keyframes shimmer{
+            0% { background-position: 0% 50%;}
+            50% { background-position: 100% 50%;}
+            100% { background-position: 0% 50%;}
+        }*/
+        body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+        </style>
+    </head>
+    <body>
+        <a href="#"><img src="images/wt-torch.png"> My Page</a>
+    </body>
+</html>
