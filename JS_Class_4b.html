@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var birthMonth = prompt("Please enter your birth month");
+            if( "string" == typeof birthMonth){
+                switch(birthMonth){
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "Jan":
+                    case "Feb":
+                    case "Mar":
+                        alert("Winter baby!");
+                        break;
+                    case "4":
+                        alert("That's April!");
+                        break;
+                    default: 
+                        alert("I didn't prepare for this");
+                }
+            }
+            else{
+                //do something else
+            }
+        </script>
+    </body>
+</html>

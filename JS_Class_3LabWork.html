@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            label, input{
+                display: block;
+            }
+        </style>
+
+        <script> 
+            function makeName(){
+                let firstName = "", lastName = "", firstInitial = '', output = "";
+                firstName = document.getElementById("firstName").value;
+                lastName = document.getElementById("lastName").value;
+
+                if( ("string" != typeof firstName || "" === firstName) 
+                        || ( "string" != typeof lastName || "" === lastName ))
+                {
+                    alert("Error, no name.");
+                }
+                else
+                {
+                    firstInitial = firstName.charAt(0);
+                    //output = firstInitial + '.' + lastName + "@" + "my.waketech.edu";
+                    output = `${firstInitial}.${lastName}@mywaketech.edu`;
+                    alert(output);
+                }
+
+            }
+        </script>
+        <noscript>
+            JavaScript must be enabled.
+        </noscript>
+    </head>
+    <body>
+        <form>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+            <button onclick="makeName();">Make Email Address</button>
+
+        </form>
+    </body>
+</html>

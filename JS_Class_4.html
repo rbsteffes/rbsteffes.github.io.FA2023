@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // There must be at least one adult
+            // Minor tickets = $5
+            // Adult tickets = $10
+            var totalPrice = 0, youthTicketPrice = 5, adultTicketPrice = 10;;
+            var quit_flag = "no";
+            while(quit_flag == "no") 
+            {
+                var adultTickets= prompt("Please enter the number of adult tickets");
+                if( adultTickets <= 0){
+                    continue;
+                }
+                var childrenTickets = prompt("Please enter the number of children's tickets");
+                totalPrice += (adultTicketPrice * adultTickets) + (childrenTickets * youthTicketPrice);
+                quit_flag = prompt("Quit? ('yes'/'no')");
+                
+            } 
+            alert(" Total cost of tickets: " + totalPrice);
+            
+            
+        </script>
+    </body>
+</html>
