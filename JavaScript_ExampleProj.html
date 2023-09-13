@@ -1,7 +1,47 @@
 <!-- Make a form with payment amount, loan original amount, and APY (interest rate, yearly)-->
 <script>
 //TODO:  Get input and store into variables
-//TODO:  Check to see if interest is greater than payments
-//TODO:  Make a function to calculate interest
-//TODO:  Print a table, by looping over each month's payment
+let originalLoanAmount = 0, interestRateYear = 0, monthlyPayment =0;
+
+originalLoanAmount = parseFloat(prompt("What is your original loan amount?"));
+interestRateYear = parseFloat(prompt("What is your interest rate in percents?"));
+monthlyPayment = parseFloat(prompt("What is your desired monthly payment"));
+
+let interestRateMonthly = ((interestRateYear/100) /12)
+
+
+//Check to see if interest is greater than payments
+if( monthlyPayment < (originalLoanAmount * interestRateMonthly))
+{
+    alert("Oh noes");
+}
+else{
+    let currentTotal = originalLoanAmount, numPayments = 0, accruedInterest = 0;
+    document.write("<table ><tr>");
+    document.write("<th>#</th><th>Current Total</th><th>Accrued Interest</th><th>Payment Amount</th>");
+    document.write("</tr>");
+    while(currentTotal>=monthlyPayment){
+        //Print a table, by looping over each month's payment
+        currentTotal -= monthlyPayment; // currentTotal = currentTotal - monthlyPayment
+        var monthlyInterestCharged = currentTotal * interestRateMonthly;
+        accruedInterest += monthlyInterestCharged;
+        currentTotal += monthlyInterestCharged;
+
+        document.write("<tr>");
+        var rowData = `<td style="text-align:center;border:solid 1px black;">${++numPayments}</td><td style="text-align:center;border:solid 1px black;">${currentTotal.toFixed(2)}</td><td style="text-align:center;border:solid 1px black;">${accruedInterest.toFixed(2)}</td><td>${monthlyPayment.toFixed(2)}</td>`;
+        document.write(rowData);
+        document.write("</tr>");
+    }
+    if(currentTotal > 0)
+    {
+        document.write("<tr>");
+        var rowData = `<td style="text-align:center;border:solid 1px black;">${++numPayments}</td><td style="text-align:center;border:solid 1px black;">0</td><td style="text-align:center;border:solid 1px black;">${accruedInterest.toFixed(2)}</td><td>${currentTotal.toFixed(2)}</td>`;
+        document.write(rowData);
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+}
+
+
 </script>

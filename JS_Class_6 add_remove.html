@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        </head>
+        <body>
+            <script>
+                var myNewArray = [ 10, 30, 50, 90];
+                alert("Array: " + myNewArray) 
+                var beginning = myNewArray.shift(); 
+                alert(beginning);
+                alert(myNewArray);
+                myNewArray.push(beginning);
+                alert("Now beginning is the end: " + myNewArray);
+                end = myNewArray.pop();
+                alert("New End: " + end);
+                myNewArray.unshift(end);
+                alert("It's whole again: " + myNewArray);
+
+
+                alert(myNewArray);
+                
+            </script>
+        </body>
+    </html>

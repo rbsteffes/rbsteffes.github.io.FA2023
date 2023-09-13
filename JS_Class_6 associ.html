@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        </head>
+        <body>
+            <script>
+                var myNewArray = {"Ryan":"Instructor", "Zach":"Student", "Temi":"Student"};
+                myNewArray["Grant"] = "Student";
+
+                for( var key in myNewArray)
+                {
+                    if(myNewArray[key] == "Student")
+                        alert(`${key} : ${myNewArray[key]}`);
+                }
+            </script>
+        </body>
+    </html>

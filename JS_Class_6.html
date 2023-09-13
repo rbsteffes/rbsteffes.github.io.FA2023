@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        </head>
+        <body>
+            <script>
+                var myNewArray = [ 1, "apple", "cow", 4];
+                alert(myNewArray.length);
+
+                for(var counter=0; counter<myNewArray.length; counter++)
+                {
+                    //alert( myNewArray[counter]);
+                }
+
+                var stringName = "cow";
+                newArray = [stringName]; // ["cow"]
+                newArray = new Array("cow"); // [ "cow"]
+                newArray = new Array(1,"cow",3); // [ 1, "cow", 3]
+                newArray = new Array(37);    // [undefined, undefined, undefined...37times]
+                
+
+                newArray = [ [1,2,3], 1, [1,2,3,4]];
+                for(var counter=0; counter<newArray.length; counter++ )
+                {
+                    if(Array.isArray(newArray[counter])){
+                        for( var counterJ=0; counterJ <newArray[counter].length; counterJ++)
+                        {
+                            document.write(newArray[counter][counterJ]);
+                            if(counterJ <newArray[counter].length-1)
+                            {
+                                document.write(",");
+                            }
+                            else{
+                                document.write('<br>');
+                            }
+                        }
+                    }
+                    else
+                    {
+                        document.write(newArray[counter] + "<br>");
+                    }
+                }
+            </script>
+        </body>
+    </html>
