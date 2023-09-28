@@ -37,6 +37,30 @@ reviews = [
     }
   ]
 
+  // Add HTML to document
+  var reviewArea = document.createElement("div");
+ /* var reviewImgDiv = document.createElement("div");
+  reviewImgDiv.id="imageProfile";
+  var reviewImg = document.createElement("img");
+  reviewImg.style.width = "auto";
+  reviewArea.appendChild(reviewImgDiv);
+  reviewImgDiv.appendChild(reviewImg);
+  reviewImg.id="profilePicture";*/
+  reviewArea.innerHTML= `<div id="imageProfile">
+  <img src="images/RyanSteffesPhotographer_small.jpg" id="profilePicture">
+</div>
+<div><h1 id="reviewName">Ryan Steffes</h1></div>
+<div id="reviewStars">5</div>
+<div><p id="reviewText">Very good!</p></div>
+<script src="scripts/review_project_reviews.js"></script>
+<div><button type="button" onclick="prev_review();">Prev</button>
+  <button type="button" onclick="random_review();">Random</button>
+  <button type="button" onclick="next_review();">Next</button></div>`;
+  document.body.appendChild(reviewArea);
+  reviewArea.style.backgroundColor = "grey";
+  reviewArea.style.border = "1px black solid";
+  reviewArea.style.borderRadius = "10%";
+  
   var current_index = 0;
   load_review(current_index);
 
@@ -47,6 +71,7 @@ reviews = [
     // Store the current index for later
     current_index = (newIndex<reviews.length && newIndex >=0)? newIndex: 0;
 
+    // review = get_review(current_index)
     // Display on screen
     
     // Set img src to profile image
@@ -108,3 +133,5 @@ reviews = [
     // load_review(new number)
     load_review(newIndex);
   }
+
+ 
