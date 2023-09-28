@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <style>
+            .simon{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 30rem;
+                height: 30rem;
+                
+            }
+            .buzzer{
+                flex-shrink: 0;
+                flex-grow: 0;
+                flex-basis: 50%;
+                box-shadow: 0px 0px 5px 0px  black;
+                
+            }
+            #score{
+                position: absolute;
+                top:10rem;
+                left:10rem;
+                z-index: 2;
+                border-radius: 50%;
+                background-color: bisque;
+                width: 3rem;
+                height: 3rem;
+                padding: 3rem;
+                text-align: center;
+                box-shadow: 0px 0px 5px 0px  black;;
+                
+
+            }
+            
+            .buzzer:nth-of-type(1)
+            { 
+                border-radius: 100% 0% 100% 0% / 100% 100% 0% 0%   ;
+            }
+            .buzzer:nth-of-type(2)
+            { 
+                border-radius: 0% 100% 100% 0% / 0% 100% 0% 100%  ;
+            }
+            .buzzer:nth-of-type(3)
+            { 
+                border-radius: 100% 0% 0% 100% / 0% 100% 0% 100%   ;
+            }
+            
+            .buzzer:nth-of-type(4)
+            { 
+                border-radius: 0% 100% 100% 0% / 0% 0% 100% 100%   ;
+            }
+            
+            .flashing{
+                animation-name: buzzFlash;   
+                animation-duration: .1s;
+                animation-iteration-count: 10;
+                animation-direction: alternate;
+            }
+
+            @keyframes buzzFlash
+            {
+                0%{ opacity: 100;}
+                100%{ opacity: 0;}
+            }
+
+        </style>
+    </head>
+    <body onload="init();">
+        <div class="simon">
+            <div class="buzzer" data-color="red" ></div>
+            <div class="buzzer" data-color="yellow"  ></div>
+            <div class="buzzer" data-color="green" ></div>
+            <div class="buzzer" data-color="blue"  ></div>
+            <p id="Score" data-score="0"></p>
+        </div>
+        
+        <button id="Go" onclick="play();">Go Simon!</button>
+
+        <script>
+            
+            var turnCount = 1, replayInd = 0;
+            var chosenList = [];
+
+            function init()
+            {
+                var elList = document.querySelectorAll('[data-color]');
+                elList.forEach(element => {
+                    element.style.backgroundColor = element.dataset.color;   
+                    element.onclick =  guess;
+                });
+                var score = document.querySelector('[data-score]');
+                score.appendChild( document.createTextNode( "Lights: "+ turnCount));
+
+
+            }
+
+            function play()
+            {
+                
+                document.getElementById("Go").style.display = "none";
+                var elList = document.querySelectorAll('[data-color]');
+                var chosenInd = Math.floor( Math.random() * elList.length );
+                elList.forEach(element => {
+                    element.classList.remove("flashing");  
+                    
+                });
+
+                console.log(elList[chosenInd]);
+                
+               
+
+                chosenList.push(elList[chosenInd]);
+                
+                elList[chosenInd].classList.add("flashing");
+            
+                
+                setTimeout(  () => {var score = document.querySelector('[data-score]');
+                score.childNodes[0].nodeValue = turnCount +" lights remaining!";}, 1200);
+                
+                
+            }
+
+            function replay()
+            {
+                
+               var elList = document.querySelectorAll('[data-color]');
+               
+                elList.forEach(element => {
+                    element.classList.remove("flashing");  
+                    void element.offsetWidth;
+                });     
+
+                chosenList[replayInd++].classList.add("flashing");
+                void elList[replayInd].offsetWidth;
+                if(replayInd < chosenList.length)
+                {
+                    setTimeout( replay, 1500);
+                }
+                else{
+                    replayInd = 0;
+                    setTimeout( play, 1500);
+                }
+                
+            }
+
+            function guess(event)
+            {
+                var element = event.target || window.event.target;
+                if(element === chosenList[replayInd])
+                {
+                   
+                    if(++replayInd === chosenList.length)
+                    {
+                        replayInd = 0;
+                        turnCount++;
+                        var score = document.querySelector('[data-score]');
+                        score.childNodes[0].nodeValue = "Success! Restarting with " + turnCount +" lights!";
+                        setTimeout( replay, 500);
+                    }
+                    else
+                    {
+                        var score = document.querySelector('[data-score]');
+                        score.childNodes[0].nodeValue = "Remaining: " + chosenList.length;
+                    }
+                }
+                else
+                {
+                    chosenList = [];
+                    turnCount = 1;
+                    document.getElementById("Go").style.display = "block";
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>
