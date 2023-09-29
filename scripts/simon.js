@@ -14,20 +14,27 @@ function initialize(){
     for( var i = 0; i<4; i++)
     {
         var button = document.createElement("div");
-        // Register events for our buttons
+        
 
         buttons.push(button);
         simonGameDiv.appendChild(button);
 
         button.id = "button"+i;
-        button.style.backgroundColor = "";
         button.classList.add("buzzer");
+
+        //Style it
+        button.style.backgroundColor = "";
+        
         button.style.border = "1px solid black";
         button.style.flexBasis = "40%";
         button.style.flexGrow = 0;
         button.style.flexShrink = 0;
+        
+        // Register events for our buttons
         button.onclick = buttonClick;
+        
     }
+    //Todo: Add start button
     
    
 
@@ -74,15 +81,46 @@ function initialize(){
     // Initialize some global data
 }
 
-function gameClick(event){
-    alert("Game Click");
+var chosenArray = [];
+var userChoice = 0;
+var replayIndex = 0;
+
+function play(){
+    // flash all the buttons in a circle
+
+    // Pick a random index
+    // Make the random button flash in the button list
+    // Add class to button to flash
+    // Push onto an array of chosen buttons
 }
 
 function buttonClick(event){
     let target = event.target;
-    alert(target.id);
     event.stopPropagation();
-    
+    // See which button was chosen
+    // Check button against array
+    // Increment userChoice
+    // if right:
+    // check if there are buttons left to pick
+    // if more left to pick
+    //     Nothing
+    // if no more left to pick
+    //     Replay the list, and the new button
+}
+
+function replayChosen(){
+
+    // go over the buttons and take flash OFF the class
+
+
+    // go over buttons and make them flash by putting flash back ON the class for 
+    // the button at the replayIndex
+    // Increment the replayIndex
+    // if I haven't replayed everything
+    //      call myself again with setTimeout
+    // otherwise 
+    //      call play to pick a new one
+
 }
 
 window.addEventListener('DOMContentLoaded', initialize, false);
